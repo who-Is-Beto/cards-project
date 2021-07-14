@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+:root{
+  --orange: hsl(31, 77%, 52%);
+  --blue: hsl(184, 100%, 22%);
+  --veryDarkBlue: hsl(179, 100%, 13%);
+  --text: hsla(0, 0%, 100%, 0.75);
+  --white: hsl(0, 0%, 95%);
+  --smallRadius: .5rem;
+  --bigRadius: 3rem;
+  --font: 15px;
+  --cardTitle: 3rem
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: var(--font);
+  font-family: 'Big Shoulders Display', cursive;
+  color: var(--text);
+}
+body{
+  background-color:  var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+h2{
+  font-family: 'Big Shoulders Display', cursive;
+  font-size: var(--cardTitle);
+  color: var(--white);
+}
+button{
+  margin-top: 12rem;
+  width: 80%;
+  height: 3.5rem;
+  border: none;
+  background-color: var(--white);
+  border-radius: var(--bigRadius);
+  cursor: pointer;
+  transition-duration: .5s;
+}
+button:hover{
+  border: 2px solid var(--white);
+  background-color: transparent;
+  color: var(--white) !important;
+}
+p{
+  line-height: 2rem;
+}
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-width: 280px;
+  max-width: 900px;
+  max-height: 500px;
+  border-radius:var(--smallRadius)
+}
+.card{
+  width: 100%;
+  padding: 3rem;
+}
+.card:nth-child(1){
+  border-radius: var(--smallRadius) 0 0 var(--smallRadius);
+  background-color: var(--orange);
+}
+.card:nth-child(1) button{
+  color: var(--orange);
+}
+.card:nth-child(2){
+  background-color: var(--blue);
+}
+.card:nth-child(2) button{
+  color: var(--blue);
+}
+.card:nth-child(3){
+  border-radius: 0 var(--smallRadius) var(--smallRadius) 0;
+  background-color: var(--veryDarkBlue)
+}
+.card:nth-child(3) button{
+  color: var(--veryDarkBlue)
+}
+.card-content{
+  display: grid;
+  row-gap: 2rem;
+}
+@media (max-width: 768px){
+  body{
+    align-items: flex-start;
+    padding-top: 2rem;
+  }
+  .container{
+    width: 80%;
+    grid-template-columns: 1fr;
+  }
+  .card:nth-child(1){
+    border-radius: var(--smallRadius) var(--smallRadius) 0 0;
+  }
+  .card:nth-child(3){
+    border-radius: 0 0 var(--smallRadius) var(--smallRadius);
+  }
+  button{
+    margin-top: 8rem;
+  }
+}
